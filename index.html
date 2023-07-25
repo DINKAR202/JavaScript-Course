@@ -8,48 +8,10 @@
 <body>
     <h2>This is my container</h2>
 
-    <button onclick="chnagethename()">Cliclk here</button>
-    <p id="chnage"></p>
+    <button onclick="change()">Cliclk here</button>
+    <h1 id="chnage2"></h1>
 
 
-    <script>
-
-
-        <!-- arrow function -->
-        let greet = () =>{
-            console.log("hello function");
-        }
-
-        greet();
-        setTimeout(() => {
-            console.log('under timeout');
-        }, 1000)
-
-        <!-- JSON tutorial -->
-
-        let jsonObj = {
-            name: 'DK',
-            channel:'dinkar',
-            age: '21',
-            email:'dinkar@gmail.com',
-            mobileNo: '707964648'
-        }
-        console.log(jsonObj);
-
-        let myJsonStr = JSON.stringify(jsonObj);
-        console.log(myJsonStr);
-
-        
-        setTimeout(() =>{
-            myJsonStr = myJsonStr.replace('DK', 'NK');
-            myJsonStr = myJsonStr.replace('dinkar', 'Nikkita');
-            myJsonStr = myJsonStr.replace('21', '25');
-            console.log(myJsonStr);
-
-        }, 3000)
-
-        
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
