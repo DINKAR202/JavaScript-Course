@@ -106,4 +106,17 @@
         const series = [1,2,3,4,5,6,7,8,9,10];
         const num = 2;
         const table = series.map((s) => s*num);
-        console.log(table)
+        console.log(table);
+
+        class Person{
+            constructor(uName, uAge){
+                this.name = uName;
+                this.age = uAge;
+            }
+            details(){
+                console.log(`The age of ${this.name} is ${this.age} years`);
+            }
+        }
+
+        const p = new Person("Wscobe tecg", 11)
+        p.details();
