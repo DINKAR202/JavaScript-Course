@@ -83,4 +83,22 @@
 
         console.log(sqr(6))
 
-        console.log(sdr(5))
+        console.log(sqr(5))
+
+        const old = [1,2,3,4,5];
+        const newArray = ["A","B","C","D",...old,6,7,8,9]
+        console.log(newArray);
+
+    // spread operator
+        const sum = (a,b,c,d) => a+b+c+d;
+        console.log(sum(1,2,3,4,5,6,7,8,9,10,11,12,13))
+
+    // rest operator
+        const add = (...numbers) =>{
+            let total = 0;
+            numbers.forEach((n) => {
+                total += n;
+            });
+            console.log(total);
+        }
+        add(1,2,3);
