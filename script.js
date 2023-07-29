@@ -132,29 +132,52 @@ console.log(x);
 
 document.getElementById("demo45").innerHTML = "Date :" + Date();
 
-
 // width and height
 
-document.getElementById("memo").innerHTML = "Browser inner window width: " + window.innerWidth + "px <br>" + "Browser inner window height: " + window.innerHeight + "px";
+document.getElementById("memo").innerHTML =
+  "Browser inner window width: " +
+  window.innerWidth +
+  "px <br>" +
+  "Browser inner window height: " +
+  window.innerHeight +
+  "px";
 
-
-function clickhere(){
-    // window.location.assign("https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign");
-    window.open("https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign")
-    // window.history.forward()
-    // window.history.back()
+function clickhere() {
+  // window.location.assign("https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign");
+  window.open(
+    "https://www.w3schools.com/js/tryit.asp?filename=tryjs_loc_assign"
+  );
+  // window.history.forward()
+  // window.history.back()
 }
 
+// fetch("https://jsonplaceholder.typicode.com/users")
+// fetch("./json/student_data.json")
+// .then((response)=> response.json())
+// .then((data)=> {
+//     for(var x in data){
+//         console.log(data)
+//         var a = `${data[x].name}. ${data[x].age} - ${data[x].city} <br>`;
+//         document.write(a);
 
-fetch("https://jsonplaceholder.typicode.com/users")
-.then((response)=> response.json())
-.then((data)=> {
-    for(var x in data){
-        console.log(data)
-        document.write(`${data[x].id}. ${data[x].name} - ${data[x].email} <br>`);
-        // document.write(`${data[x].username} <br>`);
+//     }
+// })
+// .catch((error) => document.write("Can't fetch data"));
 
-    }
-})   
+document.getElementById("saveForm").addEventListener("click", function (e) {
+  var obj = {
+    title: document.getElementById("titleText").value,
+    body: document.getElementById("bodyText").value,
+    userId: document.getElementById("userId").value,
+  };
 
-.catch((error) => document.write("Can't fetch data"));
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+});
