@@ -165,17 +165,21 @@ function clickhere() {
 // .catch((error) => document.write("Can't fetch data"));
 
 document.getElementById("saveForm").addEventListener("click", function (e) {
-  var obj = {
-    title: document.getElementById("titleText").value,
-    body: document.getElementById("bodyText").value,
-    userId: document.getElementById("userId").value,
-  };
+    e.preventDefault();
+
+
+//   var obj = {
+//     title: document.getElementById("titleText").value,
+//     body: document.getElementById("bodyText").value,
+//     userId: document.getElementById("userId").value,
+//   };
 
   fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
+    body: new FormData(document.getElementById("myForm")),
     body: JSON.stringify(obj),
     headers: {
-      "Content-type": "application/json; charset=UTF-8",
+      "Content-type": "application/x-www-form-urlencoded",
     },
   })
     .then((response) => response.json())

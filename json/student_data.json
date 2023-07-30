@@ -8,5 +8,10 @@
         "name": "Dinkar",
         "age": 22,
         "city": "Mumbai"
+    },
+    {
+        "name": "Nikkita",
+        "age": 21,
+        "city": "Delhi"
     }
 ]
